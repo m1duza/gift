@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ysabeau:ital,wght@0,1..1000;1,1..1000&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
+    <title>С новым годом мышонок!</title>
+    <style>
+       
+        canvas {
+          
+        
+            -webkit-box-shadow: -4px 4px 8px 4px rgba(51, 51, 51, 0.3);
+-moz-box-shadow: -4px 4px 8px 4px rgba(51, 51, 51, 0.3);
+box-shadow: -4px 4px 8px 4px rgba(51, 51, 51, 0.3);;
+
+        
+        }
+    </style>
+</head>
+<body>
+    <img class="gif-class" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDhzYnFkc2EzaHI3YjY2NXN4Z2tzbjJpa25rN2lnb2Jvd2gybmM2cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/EWFW0PrV695sBBJIaf/giphy.webp" alt="Пример GIF" />
+    <img class="gif-class2" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDhzYnFkc2EzaHI3YjY2NXN4Z2tzbjJpa25rN2lnb2Jvd2gybmM2cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/EWFW0PrV695sBBJIaf/giphy.webp" alt="Пример GIF" />
+   
+    <img id="id2" class="icon_2025" src="https://cdn-icons-png.flaticon.com/512/16862/16862309.png" alt="">
+    <header>
+     
+        <div class="upper_block_text">
+            <h1>С новым годом!</h1>
+            <p class="upper_block_text_p">Ты лучшее что произошло со мной в этом году!</p>
+        </div>
+        <div class="main_poem_block">
+            <div id="id">
+                <img class="draggable_img" src="https://cdn-icons-png.flaticon.com/512/177/177043.png" alt="">
+            </div>
+            <img src="https://cdn-icons-png.flaticon.com/512/2411/2411815.png" alt="" class="snow_flake1">
+            <img src="https://cdn-icons-png.flaticon.com/512/2942/2942909.png" alt="" class="snow_flake2">
+            <img src="https://cdn-icons-png.flaticon.com/512/4471/4471335.png" alt="" class="snow_flake3">
+            <img src="https://cdn-icons-png.flaticon.com/512/5906/5906790.png" alt="" class="snow_flake4">
+            <p class="title_poem"></p>
+                <p >Не знав я ласки и заботы
+                <br>Я познакомился с тобой
+                <br>Ты словно яркий лучик солнца
+                <br>Светишь мне над головой</p>
+                <p>
+                    Я чувствую тебя, ты рядом<br>
+                    Не видя в очи я тебя<br>
+                    Ты может маленькая мышка<br>
+                    Как призрак смотришь на меня
+                </p>
+                <p>
+                    Твой голос только мне и внятен<br>
+                    Прекрасный, милый и живой<br>
+                    Сравнимый с божьим дорованьем<br>
+                    с улыбкой слушаю его
+                </p>
+            <p class="poem">
+                
+         
+            
+         
+            
+
+        </div>
+        
+    </header>
+    
+    <canvas id="canvas" width="350" height="350"></canvas>
+    <div id="controls" class="controls">
+        <div class="wrapper_button">
+            <button id="save" class="button">Сохранить</button>
+            <button id="clear" class="button">Очистить</button> <!-- Новая кнопка -->
+        </div>
+        <label for="color" class="color_label">Цвет: </label>
+        <input type="color" id="color" value="#000000" class="color_picker">
+        <br>
+        
+        <input
+            type="range"
+            min="1"
+            max="20"
+            step="1"
+            value='5'
+            id="lineWidth"
+            class="slider"
+        />
+        <span class="slider_value" id="lineWidthValue">5</span> 
+        <br>
+      
+    </div>
+     <footer>
+        <div class="bottom_block">
+            <div class="footer_common_block">
+            <div class="footer_top_block">
+                <img class="footer_img" src="https://cdn-icons-png.flaticon.com/512/594/594814.png" alt="">
+                <p class="footer_top_text">Люблю тебя Мария Николенко<3</p>
+            </div>
+            <div class="footer_discription">
+                По вопросом обращатся: <a class="footer_link" href="https://t.me/anyWay11112">Телеграмм<3</a>
+            </div>
+        </div>
+            <div id="target" class="place_for_heart">
+                <div class="frame_place"><3</div>
+            </div>
+            <!-- Модальное окно -->
+            <div id="modal" class="modal">
+                <div class="modal-content">
+                <span id="closeModal" class="close">&times;</span>
+                    <p class="modal_text2">Тут я расскажу что думаю)</p>
+                    <p class="modal_text">Мой маленький мышонок), как бы это просто не звучало, но я кладу большую душу в эти слова, когда говорю тебе это), хоть я и говорю это тебе это очень часто, но я говорю это всегда искрине)</p>
+                    <p class="modal_text">Спасибо тебе за этот год), хоть я сейчас повторю слова которые были в начале твоего подарка, но ты правда сделала этот год самым лучшим в моей жизни!). Каждый созвон с тобой это все что я ждал каждую неделю.(по-ходу как я этого писал я чуть заплакал) каждый твой кружок радовал меня, каждое записанное голосовое сообщение, каждое сообщение от тебя). Не знаю почему, как это это вообще возможно, это даже у меня в голове не укладывается, но я люблю тебя, возможно это не слишком красиво написанное слово, но для меня оно не просто слово).</p>
+
+                    <p class="modal_text">Ты великолепна мышонок), ты правда очень очень красивая, безумно нежная, очень очень очень очень очень милая))), ну вот прям оченььь)))), хочется тебе умелять каждый день, как ты умеляешься это ну не описать словами)).Такого не найти в других, которые так же будут умеляться моим словам, умелятся всем).</p>
+                    <p class="modal_text">Ты очень умная), ну правда), мне очень многому нужно научится у тебя), твоей силе, в моральном плане, да и просто в знаниях).</p>
+                    <p class="modal_text">Ты безумно заботливая)), мне это очень сильно нравится)), когда ты так переживаешь за меня)), меня это прям до души берет), хочется уже идти бублики покупать, ой не бублики, а эти колечки, крч предложение тебе сделать)))))). Когда ты спрашивала про мою кисть))), хоть в начале не так часто, но потом). Мой маленький мышонок)</p>
+                    <p class="modal_text">С тобой мне хочется прожить всю свою жизнь), подарить всего себя тебе), самого лучшего, я обязательно еще подкачаюсь и буду как Nileto ахаха, хз недавно его увидел, почему то как он хочу быть, ебать у не плечи, я такие же хочу). Что бы ты не стыдилась меня, перед всеми, что бы мы с тобой шли за ручку и все на нас смотрели), только в хором смысле)), перед друзьями могла похвастаться), хоть и рожа у меня так себе, но ладно). ШУЧУУУУУ))) ахаххаха, может нет)). Что бы мы с тобой ходили по ресторанам а я был в рубашке, а ты в платье))))))), это был бы идеальный вечер)))))). Хочу путешествовать с тобой) везде везде)), кушать с тобой сосиски со сметаной), и шинку с огурцами)))), все что ты захочешь)). Все мое тело твое). Я клянусь всем что у меня есть, мне нравится все в тебе, все все)), даже если ты там в тайне казявки ешь)).
+                    <p class="modal_text">Хоть мы с тобой наверно не так много общаемся без того что бы сказать как мы друг друга любим, ((, это из-за меня(, я просто не супер разговорчивый, но когда я приеду, я надеюсь что я разговорюсь)), и мы будем дурачиться, и играться как дети). Люблю тебя)). ООО еще раз с новым годом мышонок)))))).</p>
+                    <p class="modal_text">теперь я хочу поговорить о тебе), боже какая ты ахуенная, прости меня за это матное слово, но другое ни какое больше не подходит к описанию тебя). Твоя божественная фигура, при виде которой у меня уже стояк), хоть я до сих пор в афиге что я такое говорю , ведь как бы это не прилично, хотя как я буду тебя трахать потом, эти слова покажуться пушинкой). Если что я не говорю что я тебя буду трахать , так что бы тебе не дай бох стало плохо, а просто мне очень нравится твое тело), да и ты в обшем.Хоть мне вообще не нравится разделение тело и весь человек, но все же для тебя я могу такое говорить, ведь сложно представить что такое миленькое существо как ты, будет такое красивое)))). Зачем я это пишу), ну я дурак). я не буду опять говорить как я буду тебя трахать, ну смысле тебя возбуждать, но все же). Так еще по поводу "трахнуть", я не буду тебя как то насиловать, я очень хочу что бы тебе было в начале очень приятно, это уже потом) когда уже будет не так встовлять, ну кайфа не так будет, то там подключится тяжелая артелерия)), чо я несу)). Так вообщем ты великолепна, я бы даже сейчас хотел тебе отлизать твою вкусную киску). хахахаахахах мне кажется текст который я весь написал не поместится в сайт).</p>
+                    <p class="modal_text">Ну да мне жопа), я и правда не уместил все(, так что украсить  не получится(, а я бы это легко сделал(, прости(((. Надеюсь мы встретимся), пройдем через все трудности, хоть меня уже наверно неделю а то и гораздо больше, то что я же если не успею, ну когда ты дашь мне денег что бы я к тебе приехал, хоть я и сделаю все что бы такого не было, но если такое будет, то мне уже очень стыдно..... Я буду хоть камни Словакские есть), мне нечего от тебя не нужно, только твая забота ,и ты ). так ладно все( Люблю тебя), не плачь мышонок). хоть и мог милее написать, или в конце веселее, написав все лучшие моменты, но я думаю под шампусиком будущий Ваня тебе расскажет), там будет жопа). А и прости за орфографию, да, я Таджик). (пишу через минуту) боже как же это классно вот так писать)))))), на твой день рождение тебе огромнуууууюю посылку подарю)), там будет еще больше всего)). Целую<3</p>
+                    </p>
+                </div>
+            </div>
+  
+
+        </div>
+     </footer>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const socket = io();
+
+        let drawing = false;
+        let currentColor = document.getElementById('color').value;
+        let currentLineWidth = document.getElementById('lineWidth').value;
+
+        // Изменение цвета и ширины линии
+        document.getElementById('color').addEventListener('input', (event) => {
+            currentColor = event.target.value;
+        });
+
+        const lineWidthInput = document.getElementById('lineWidth');
+        const lineWidthValue = document.getElementById('lineWidthValue');
+
+        // Обновление ширины линии и отображение значения
+        lineWidthInput.addEventListener('input', (event) => {
+            currentLineWidth = event.target.value;
+            lineWidthValue.textContent = currentLineWidth; // Обновляем отображаемое значение
+            console.log(`Текущая ширина линии: ${currentLineWidth}`);
+        });
+
+        // События рисования
+        canvas.addEventListener('mousedown', () => { drawing = true });
+        canvas.addEventListener('mouseup', () => { drawing = false; ctx.beginPath(); });
+        canvas.addEventListener('mousemove', draw);
+
+        function draw(e) {
+    if (!drawing) return;
+
+    const rect = canvas.getBoundingClientRect(); // Корректные координаты холста
+    const x = e.clientX - rect.left; // Относительная X
+    const y = e.clientY - rect.top;  // Относительная Y
+
+    // Рисуем локально
+    ctx.lineWidth = currentLineWidth;
+    ctx.lineCap = 'round';
+    ctx.strokeStyle = currentColor;
+
+    ctx.lineTo(x, y);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+
+    // Отправляем данные на сервер
+    socket.emit('draw', { x, y, color: currentColor, lineWidth: currentLineWidth });
+}
+
+        // Получение и отображение точек от других пользователей
+        socket.on('draw', ({ x, y, color, lineWidth }) => {
+            ctx.lineWidth = lineWidth;
+            ctx.lineCap = 'round';
+            ctx.strokeStyle = color;
+
+            ctx.lineTo(x, y);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+        });
+
+        // Инициализация текущего рисунка
+        socket.on('init-drawing', (existingDrawings) => {
+            existingDrawings.forEach(({ x, y, color, lineWidth }) => {
+                ctx.lineWidth = lineWidth;
+                ctx.lineCap = 'round';
+                ctx.strokeStyle = color;
+
+                ctx.lineTo(x, y);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(x, y);
+            });
+        });
+
+        // Сохранение рисунка
+        document.getElementById('save').addEventListener('click', () => {
+            socket.emit('save');
+        
+        });
+        // Очистка холста
+// Отправка события очистки на сервер
+document.getElementById('clear').addEventListener('click', () => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // Локальная очистка
+    socket.emit('clear'); // Отправка события "clear" на сервер
+});
+
+// Получение события очистки от сервера
+socket.on('clear', () => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // Очистка при получении события
+});
+document.getElementById('scrollButton').addEventListener('click', () => {
+    window.scrollTo({
+        top: 1000, // координата Y
+        left: 0,   // координата X (обычно 0)
+        behavior: 'smooth' // плавная прокрутка
+    });
+});
+document.getElementById('scrollButton2').addEventListener('click', () => {
+    window.scrollTo({
+        top: 1000, // координата Y
+        left: 0,   // координата X (обычно 0)
+        behavior: 'smooth' // плавная прокрутка
+    });
+});
+gsap.registerPlugin(Draggable);
+
+// Подключаем Draggable для элемента с ID "id"
+gsap.registerPlugin(Draggable);
+
+// Находим целевой блок, в который нужно переместить объект
+const targetBlock = document.querySelector("#target"); // Замените ID блока
+const draggableElement = document.querySelector("#id");
+
+// Создаем Draggable объект
+Draggable.create("#id", {
+  type: "x,y", // Перемещение по осям X и Y
+  bounds: window, // Ограничиваем перемещение границами окна
+  edgeResistance: 0.5, // Сопротивление при выходе за границы
+  inertia: true, // Инерция при отпускании
+  onDragEnd: function () {
+    // Проверяем пересечение draggable объекта с целевым блоком
+    if (isIntersecting(draggableElement, targetBlock)) {
+      openPopup(); // Показываем модальное окно
+    }
+  },
+});
+
+
+// Функция проверки пересечения
+function isIntersecting(el1, el2) {
+  const rect1 = el1.getBoundingClientRect();
+  const rect2 = el2.getBoundingClientRect();
+
+  return !(
+    rect1.right < rect2.left ||
+    rect1.left > rect2.right ||
+    rect1.bottom < rect2.top ||
+    rect1.top > rect2.bottom
+  );
+}
+
+// Функция для открытия попапа
+function openPopup() {
+  
+}
+// Получаем элементы модального окна
+const modal = document.getElementById("modal");
+const closeModal = document.getElementById("closeModal");
+
+// Функция для показа модального окна
+function openPopup() {
+  modal.style.display = "block"; // Показываем окно
+  document.body.style.position = 'fixed';
+document.body.style.top = `-${window.scrollY}px`;
+
+// Когда модальное окно скрыто, остаемся в верхней части позиции прокрутки
+document.body.style.position = '';
+document.body.style.top = '';
+const top = document.body.style.top;
+document.body.style.position = '';
+document.body.style.top = '';
+window.scrollTo(0, parseInt(scrollY || '0') * -1);
+}
+
+// Закрытие модального окна при клике на крестик
+closeModal.addEventListener("click", () => {
+  modal.style.display = "none"; // Скрываем окно
+});
+
+// Закрытие модального окна при клике вне окна
+window.addEventListener("click", (event) => {
+  if (event.target === modal) {
+    modal.style.display = "none"; // Скрываем окно
+  }
+});
+
+gsap.registerPlugin(Draggable);
+
+Draggable.create("#id2", {
+  type: "x,y", // Разрешаем перемещение по осям X и Y
+  bounds: window, // Ограничиваем перемещение границами окна
+  edgeResistance: 0.5, // Сопротивление при выходе за границы
+  inertia: true, // Добавляем инерцию (анимацию после отпускания)
+  onDrag: function () {
+    console.log("Двигаем элемент: ", this.x, this.y); // Выводим координаты
+  },
+});
+
+    </script>
+</body>
+</html>

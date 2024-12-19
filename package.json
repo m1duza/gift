@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "draggable": "^4.2.0",
+    "express": "^4.21.1",
+    "mysql2": "^3.11.4",
+    "socket.io": "^4.8.1"
+  }
+}
